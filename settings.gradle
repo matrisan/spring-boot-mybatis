@@ -1,0 +1,6 @@
+rootProject.name = 'spring-boot-mybatis'
+include 'spring-boot-mybatis-basic'
+include 'spring-boot-mybatis-common'
+include 'spring-boot-mybatis-convertor'
+include 'spring-boot-mybatis-interceptor'
+
