@@ -25,7 +25,9 @@ public class InitUser implements CommandLineRunner {
     public void run(String... args) {
         if (repository.count() == 0) {
             for (int i = 0; i < 10; i++) {
-                UserInfoDO save = repository.save(UserInfoDO.builder().username("name:" + i).age(i).build());
+                UserInfoDO save = repository.save(UserInfoDO.builder().username("name:" + i).age(i)
+                        .sex(1)
+                        .build());
                 System.out.println(save);
             }
         }

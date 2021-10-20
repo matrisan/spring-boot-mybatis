@@ -1,9 +1,9 @@
-package com.github.mybatis.convertor.config;
+package com.github.mybatis.interceptor.config;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.mybatis.convertor.pojo.BookValue;
+import com.github.mybatis.interceptor.pojo.BookValue;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.type.BaseTypeHandler;

@@ -1,9 +1,9 @@
-package com.github.mybatis.convertor.init;
+package com.github.mybatis.interceptor.init;
 
 
-import com.github.mybatis.convertor.pojo.BookValue;
-import com.github.mybatis.convertor.pojo.UserInfoDO;
-import com.github.mybatis.convertor.repository.IUserInfoRepository;
+import com.github.mybatis.interceptor.pojo.BookValue;
+import com.github.mybatis.interceptor.pojo.UserInfoDO;
+import com.github.mybatis.interceptor.repository.IUserInfoRepository;
 import net.bytebuddy.utility.RandomString;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;

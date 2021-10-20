@@ -1,4 +1,4 @@
-package com.github.mybatis.common.pojo;
+package com.github.mybatis.interceptor.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,13 +7,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author 石少东
@@ -37,13 +38,11 @@ public class UserInfoDO implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, columnDefinition = "VARCHAR(20) COMMENT '用户名'")
     private String username;
 
-    @Column(nullable = false, columnDefinition = "TINYINT COMMENT '用户年龄'")
     private Integer age;
 
-    @Column(nullable = false, columnDefinition = "TINYINT COMMENT '性别'")
-    private Integer sex;
+    @Convert(converter = ListConverter.class)
+    private List<BookValue> books;
 
 }

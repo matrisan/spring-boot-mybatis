@@ -1,4 +1,4 @@
-package com.github.mybatis.convertor.pojo;
+package com.github.mybatis.interceptor.pojo;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

@@ -1,8 +1,8 @@
-package com.github.mybatis.convertor;
+package com.github.mybatis.interceptor;
 
-import com.github.mybatis.convertor.pojo.UserInfoDO;
-import com.github.mybatis.convertor.pojo.UserQuery;
-import com.github.mybatis.convertor.repository.IUserInfoMapper;
+import com.github.mybatis.interceptor.pojo.UserInfoDO;
+import com.github.mybatis.interceptor.pojo.UserQuery;
+import com.github.mybatis.interceptor.repository.IUserInfoMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

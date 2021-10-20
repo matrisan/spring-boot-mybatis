@@ -1,7 +1,7 @@
-package com.github.mybatis.convertor.repository;
+package com.github.mybatis.interceptor.repository;
 
-import com.github.mybatis.convertor.pojo.UserInfoDO;
-import com.github.mybatis.convertor.pojo.UserQuery;
+import com.github.mybatis.interceptor.pojo.UserInfoDO;
+import com.github.mybatis.interceptor.pojo.UserQuery;
 import lombok.val;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -27,12 +27,11 @@ public interface IUserInfoMapper {
     @Select("SELECT * FROM user_info WHERE id = #{id}")
     UserInfoDO selectFromUserInfoByUserId(@Param("id") long id);
 
-
-    @SelectProvider(type = SqlBuilder.class, method = "sql")
+    @SelectProvider(type = SqlBuilder.class, method = "buildSql")
     List<UserInfoDO> findAll(UserQuery query);
 
     class SqlBuilder {
-        public String sql(@NotNull UserQuery query) {
+        public String buildSql(@NotNull UserQuery query) {
             val sql = new StringBuilder();
             sql.append("select * from user_info where 1 = 1");
             if (StringUtils.isNoneBlank(query.getUsername())) {

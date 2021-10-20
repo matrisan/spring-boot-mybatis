@@ -1,6 +1,6 @@
-package com.github.mybatis.convertor.repository;
+package com.github.mybatis.interceptor.repository;
 
-import com.github.mybatis.convertor.pojo.UserInfoDO;
+import com.github.mybatis.interceptor.pojo.UserInfoDO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

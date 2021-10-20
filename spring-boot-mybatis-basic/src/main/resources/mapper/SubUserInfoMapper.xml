@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.mybatis.basic.repository.SubUserInfoMapper">
+    <select id="findById" resultMap="BaseUserResultMap">
+        SELECT user.id,
+               user.username,
+               user.age,
+               user.sex
+        FROM user_info AS user
+        WHERE user.id = #{id};
+    </select>
+
+<!--    <insert id="save">-->
+<!--        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="userId">-->
+<!--            SELECT LAST_INSERT_ID() AS ID-->
+<!--        </selectKey>-->
+<!--        INSERT INTO user_info(username, age, sex)-->
+<!--        VALUES (#{user.username.name, jdbcType=VARCHAR},-->
+<!--                #{user.userAge.age, jdbcType=TINYINT},-->
+<!--                #{user.userSex, jdbcType=TINYINT, typeHandler=com.github.mybatis.common.config.SexTypeHandler})-->
+<!--    </insert>-->
+
+    <resultMap id="BaseUserResultMap" type="com.github.mybatis.common.pojo.SubUserInfoDO">
+        <result column="sex" property="userSex" typeHandler="com.github.mybatis.common.config.SexTypeHandler"/>
+        <association property="userId" javaType="com.github.mybatis.common.pojo.value.UserId">
+            <id column="id" jdbcType="BIGINT" property="id"/>
+        </association>
+        <association property="username" javaType="com.github.mybatis.common.pojo.value.Username">
+            <result column="username" jdbcType="VARCHAR" property="name"/>
+        </association>
+        <association property="userAge" javaType="com.github.mybatis.common.pojo.value.Age">
+            <result column="age" jdbcType="TINYINT" property="age"/>
+        </association>
+    </resultMap>
+</mapper>
